@@ -30,7 +30,7 @@ public interface DiaryDao {
 	//장소
 	String getLocationDetail(int diary_id);
 	
-	//이미지
-//	String getImgUrl(); //파라미터 뭘로 받아올지 고민 후 수정하기
+	//이미지 url 가져오기
+	String getImgUrl(int diary_id);
 
 }
