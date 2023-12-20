@@ -54,4 +54,9 @@ public class DiaryServiceImpl implements DiaryService{
 		return dDao.getLocationDetail(diary_id);
 	}
 
+	@Override
+	public String getImgUrl(int diary_id) {
+		return dDao.getImgUrl(diary_id);
+	}
+
 }
