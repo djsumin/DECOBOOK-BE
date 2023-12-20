@@ -10,12 +10,13 @@ public class Budget {
 	private String memo;
 	private int amount; //원래있던잔고
 	private int after_amount; // 지출/수입 후 잔고
+	private String user_id;
 	
 	public Budget() {
 	}
 
 	public Budget(int budget_id, String budget_date, boolean isIncome, int category, int cost, String memo, int amount,
-			int after_amount) {
+			int after_amount, String user_id) {
 		super();
 		this.budget_id = budget_id;
 		this.budget_date = budget_date;
@@ -25,6 +26,7 @@ public class Budget {
 		this.memo = memo;
 		this.amount = amount;
 		this.after_amount = after_amount;
+		this.user_id = user_id;
 	}
 
 	public int getBudget_id() {
@@ -91,11 +93,21 @@ public class Budget {
 		this.after_amount = after_amount;
 	}
 
+	public String getUser_id() {
+		return user_id;
+	}
+
+	public void setUser_id(String user_id) {
+		this.user_id = user_id;
+	}
+
 	@Override
 	public String toString() {
 		return "Budget [budget_id=" + budget_id + ", budget_date=" + budget_date + ", isIncome=" + isIncome
 				+ ", category=" + category + ", cost=" + cost + ", memo=" + memo + ", amount=" + amount
-				+ ", after_amount=" + after_amount + "]";
+				+ ", after_amount=" + after_amount + ", user_id=" + user_id + "]";
 	}
+
+
 	
 }

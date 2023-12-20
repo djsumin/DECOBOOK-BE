@@ -10,12 +10,13 @@ public class Diary {
 	private int feeling;
 	private int star_score;
 	private String location;
+	private String user_id;
 	
 	public Diary() {
 	}
 
 	public Diary(int diary_id, String diary_date, String title, String diary_content, String img, int weather,
-			int feeling, int star_score, String location) {
+			int feeling, int star_score, String location, String user_id) {
 		super();
 		this.diary_id = diary_id;
 		this.diary_date = diary_date;
@@ -26,6 +27,7 @@ public class Diary {
 		this.feeling = feeling;
 		this.star_score = star_score;
 		this.location = location;
+		this.user_id = user_id;
 	}
 
 	public int getDiary_id() {
@@ -100,11 +102,19 @@ public class Diary {
 		this.location = location;
 	}
 
+	public String getUser_id() {
+		return user_id;
+	}
+
+	public void setUser_id(String user_id) {
+		this.user_id = user_id;
+	}
+
 	@Override
 	public String toString() {
 		return "Diary [diary_id=" + diary_id + ", diary_date=" + diary_date + ", title=" + title + ", diary_content="
 				+ diary_content + ", img=" + img + ", weather=" + weather + ", feeling=" + feeling + ", star_score="
-				+ star_score + ", location=" + location + "]";
+				+ star_score + ", location=" + location + ", user_id=" + user_id + "]";
 	}
-	
+
 }
