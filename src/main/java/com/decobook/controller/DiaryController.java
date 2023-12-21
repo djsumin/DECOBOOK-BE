@@ -21,8 +21,7 @@ import com.decobook.model.service.DiaryService;
 @CrossOrigin("*")
 public class DiaryController {
 	
-	@Autowired
-	private DiaryService dService;
+	@Autowired private DiaryService dService;
 	
 	//등록
 	@PostMapping("/diary")
