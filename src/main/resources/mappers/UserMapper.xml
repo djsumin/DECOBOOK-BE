@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.decobook.model.dao.UserDao">
+	<!-- 로그인 -->
+	<select id="login" parameterType="User" resultType="String">
+		select * 
+		from user
+		where user_id =#{user_id} and password = #{password}
+	</select>
+	
+	<!-- 회원가입 -->
+	<insert id="registUser" parameterType="User">
+		insert users (user_id, password, user_name, age, email, phone_number, gender, birthday, amount)
+		values(#{user_id}, #{password}, #{user_name}, #{age}, #{email}, #{phone_number}, #{gender}, #{birthday}, #{amount})
+	</insert>
+	
+	<!-- id값을 조건으로 하는 회원정보 수정 -->
+	<update id="updateUser" parameterType="User">
+		update user
+		set password=#{password}, user_name=#{user_name}, age=#{age}, email=#{email}, phone_number=#{phone_number}, gender=#{gender}, birthday=#{birthday}, amount=#{amount}
+		where user_id=#{user_id} 
+	</update>
+	
+	<!-- user_id로 검색 (jwt) -->
+	<select id="searchById" parameterType="String" resultType="User">
+		select *
+		from user
+		where user_id =#{user_id}
+	</select>
+	
+</mapper>  
