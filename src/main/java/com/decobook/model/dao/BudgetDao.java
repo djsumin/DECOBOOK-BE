@@ -25,14 +25,14 @@ public interface BudgetDao {
 	//근데 Budget에서 뭘 뽑아와야할지 모르겠다
 	
 	//현재 달의 총 수입
-	List<Budget> selectBudgetIncome();
+	List<Budget> selectBudgetIncome(int category);
 	
 	//현재 달의 총 지출
-	List<Budget> selectBudgetExpenditure();
+	List<Budget> selectBudgetExpenditure(int category);
 	
 	//월 별 가계부
-	List<Budget> selectBudgetByMonth();
+	List<Budget> selectBudgetByMonth(String budget_date);
 	
 	//일 별 가계부
-	List<Budget> selectBudgetByDay();
+	List<Budget> selectBudgetByDay(String budget_date);
 }
