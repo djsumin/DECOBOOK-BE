@@ -40,23 +40,24 @@ public class BudgetServiceImpl implements BudgetService{
 	}
 
 	@Override
-	public List<Budget> selectBudgetIncome() {
-		return bDao.selectBudgetIncome();
+	public List<Budget> selectBudgetIncome(int category) {
+		return bDao.selectBudgetIncome(category);
 	}
 
 	@Override
-	public List<Budget> selectBudgetExpenditure() {
-		return bDao.selectBudgetExpenditure();
+	public List<Budget> selectBudgetExpenditure(int category) {
+		return bDao.selectBudgetExpenditure(category);
 	}
 
 	@Override
-	public List<Budget> selectBudgetByMonth() {
-		return bDao.selectBudgetByMonth();
+	public List<Budget> selectBudgetByMonth(String budget_date) {
+		return bDao.selectBudgetByMonth(budget_date);
 	}
 
 	@Override
-	public List<Budget> selectBudgetByDay() {
-		return bDao.selectBudgetByDay();
+	public List<Budget> selectBudgetByDay(String budget_date) {
+		return bDao.selectBudgetByDay(budget_date);
 	}
+
 
 }
