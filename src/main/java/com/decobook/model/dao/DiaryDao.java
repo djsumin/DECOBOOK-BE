@@ -26,11 +26,6 @@ public interface DiaryDao {
 	
 	//날짜별
 	Diary selectDiaryByDate(String diary_date);
-	
-	//장소
-	String getLocationDetail(int diary_id);
-	
-	//이미지 url 가져오기
-	String getImgUrl(int diary_id);
+
 
 }
