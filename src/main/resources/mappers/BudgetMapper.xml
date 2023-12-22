@@ -27,6 +27,7 @@
 	<select id="selectBudgetAll" resultType="Budget">
 		select * 
 		from budget
+		
 	</select>
 	
 	<!-- 가계부 상세보기 -->
@@ -38,6 +39,7 @@
 	
 	<!-- 현재 달의 총 수입 -->
 	<select id="selectBudgetIncome">
+		select * from budget
 		
 	</select>
 	
