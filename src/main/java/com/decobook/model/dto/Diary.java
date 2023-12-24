@@ -6,6 +6,7 @@ public class Diary {
 	private String title;
 	private String diary_content;
 	private String img;
+	private String orgImg;
 	private int weather;
 	private int feeling;
 	private int star_score;
@@ -14,12 +15,14 @@ public class Diary {
 	private int longitude;
 
 	public Diary() { }
-	public Diary(int diary_id, String diary_date, String title, String diary_content, String img, int weather, int feeling, int star_score, String user_id, int latitude, int longitude) {
+
+	public Diary(int diary_id, String diary_date, String title, String diary_content, String img, String orgImg, int weather, int feeling, int star_score, String user_id, int latitude, int longitude) {
 		this.diary_id = diary_id;
 		this.diary_date = diary_date;
 		this.title = title;
 		this.diary_content = diary_content;
 		this.img = img;
+		this.orgImg = orgImg;
 		this.weather = weather;
 		this.feeling = feeling;
 		this.star_score = star_score;
@@ -66,6 +69,14 @@ public class Diary {
 
 	public void setImg(String img) {
 		this.img = img;
+	}
+
+	public String getOrgImg() {
+		return orgImg;
+	}
+
+	public void setOrgImg(String orgImg) {
+		this.orgImg = orgImg;
 	}
 
 	public int getWeather() {
@@ -124,6 +135,7 @@ public class Diary {
 				", title='" + title + '\'' +
 				", diary_content='" + diary_content + '\'' +
 				", img='" + img + '\'' +
+				", orgImg='" + orgImg + '\'' +
 				", weather=" + weather +
 				", feeling=" + feeling +
 				", star_score=" + star_score +

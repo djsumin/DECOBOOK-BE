@@ -22,7 +22,7 @@ public interface DiaryDao {
 	Diary selectDiaryOne(int diary_id);
 	
 	//최근 (메인)
-	Diary selectDiaryRecent(int diary_id);
+	Diary selectDiaryRecent();
 	
 	//날짜별
 	Diary selectDiaryByDate(String diary_date);

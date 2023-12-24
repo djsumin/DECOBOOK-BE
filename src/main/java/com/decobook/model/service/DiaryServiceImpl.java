@@ -40,8 +40,8 @@ public class DiaryServiceImpl implements DiaryService{
 	}
 
 	@Override
-	public Diary selectDiaryRecent(int diary_id) {
-		return dDao.selectDiaryRecent(diary_id);
+	public Diary selectDiaryRecent() {
+		return dDao.selectDiaryRecent();
 	}
 
 	@Override
@@ -51,12 +51,14 @@ public class DiaryServiceImpl implements DiaryService{
 
 	@Override
 	public String getLocationDetail(int diary_id) {
-		return dDao.getLocationDetail(diary_id);
+//		return dDao.getLocationDetail(diary_id);
+		return null;
 	}
 
 	@Override
 	public String getImgUrl(int diary_id) {
-		return dDao.getImgUrl(diary_id);
+		return null;
+		//return dDao.getImgUrl(diary_id);
 	}
 
 }
