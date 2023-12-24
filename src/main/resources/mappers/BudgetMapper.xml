@@ -41,6 +41,7 @@
 	<!-- 현재 달의 총 수입 -->
 	<select id="selectBudgetIncome" parameterType="int" resultType="Budget">
 		select * from budget
+		where category
 	</select>
 	
 	

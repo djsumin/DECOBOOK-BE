@@ -60,6 +60,7 @@
 			<version>2.0.2</version>
 		</dependency>
 
+		
 		<!-- JWT 사용하기 위해서 -->
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>

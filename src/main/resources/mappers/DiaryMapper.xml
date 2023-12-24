@@ -24,7 +24,7 @@
     </delete>
 
     <!-- 전체 (리스트) -->
-    <select id="selectAll" resultType="Diary">
+    <select id="selectDiaryAll" resultType="Diary">
         SELECT *
         FROM diary;
     </select>
@@ -36,7 +36,7 @@
     </select>
 
     <!-- 최근 -->
-    <select id="selectDiaryOne" resultType="Diary" parameterType="int">
+    <select id="selectDiaryRecent" resultType="Diary" parameterType="int">
         SELECT * FROM diary
         ORDER BY diary_id DESC
         LIMIT 1;
@@ -48,5 +48,6 @@
         WHERE diary_date = #{diary_date};
     </select>
 
+	
 
 </mapper>
