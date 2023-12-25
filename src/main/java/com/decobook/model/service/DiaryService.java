@@ -3,6 +3,7 @@ package com.decobook.model.service;
 import java.util.List;
 
 import com.decobook.model.dto.Diary;
+import org.springframework.web.multipart.MultipartFile;
 
 public interface DiaryService {
 	
@@ -32,6 +33,7 @@ public interface DiaryService {
 	
 	//이미지 url 가져오기
 	String getImgUrl(int diary_id);
-	
+
+	int uploadImg(MultipartFile file, int diary_id);
 
 }

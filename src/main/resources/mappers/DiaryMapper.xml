@@ -48,5 +48,10 @@
         WHERE diary_date = #{diary_date};
     </select>
 
+    <update id="uploadImg" parameterType="Diary">
+        UPDATE diary
+        SET img = #{img}, orgImg = #{orgImg}
+        WHERE diary_id = #{diary_id};
+    </update>
 
 </mapper>

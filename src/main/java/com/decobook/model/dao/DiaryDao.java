@@ -27,5 +27,8 @@ public interface DiaryDao {
 	//날짜별
 	Diary selectDiaryByDate(String diary_date);
 
+	// 업로드
+	int uploadImg(Diary diary);
+
 
 }
