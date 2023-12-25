@@ -14,7 +14,7 @@ import io.jsonwebtoken.UnsupportedJwtException;
 @Component
 public class JwtUtil {
 	
-	private static final String SALT = "Yisthebest";
+	private static final String SALT = "ggulggulmeongggang";
 	
 	//토큰 생성 메서드
 	public String createToken(String key, String value) {
@@ -22,8 +22,8 @@ public class JwtUtil {
 			return Jwts.builder()
 					.setHeaderParam("alg", "HS256")
 					.setHeaderParam("typ", "JWT") //헤더
-					.claim(key, value)
-					.signWith(SignatureAlgorithm.HS256, SALT.getBytes("UTF-8"))
+					.claim(key, value) //페이로드
+					.signWith(SignatureAlgorithm.HS256, SALT.getBytes("UTF-8")) //서명
 					.compact();
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();

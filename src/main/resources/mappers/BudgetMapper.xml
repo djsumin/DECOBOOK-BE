@@ -40,7 +40,7 @@
 	<!-- 현재 달의 총 수입 -->
 	<select id="selectBudgetIncome">
 		select * from budget
-		
+		where category
 	</select>
 	
 	

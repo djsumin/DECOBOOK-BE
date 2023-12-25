@@ -16,17 +16,17 @@ public class UserServiceImpl implements UserService{
 	private UserDao uDao;
 
 	@Override
-	public Map<String, Object> login(User user) {
-		return uDao.login(user);
+	public Map<String, Object> login(String user_id, String password) {
+		return uDao.login(user_id, password);
 	}
 
 	@Override
-	public int registUser(User user) {
+	public Integer registUser(User user) {
 		return uDao.registUser(user);
 	}
 
 	@Override
-	public int updateUser(User user) {
+	public Integer updateUser(User user) {
 		return uDao.updateUser(user);
 	}
 

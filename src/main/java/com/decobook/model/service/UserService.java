@@ -8,13 +8,13 @@ import com.decobook.model.dto.User;
 public interface UserService {
 	
 	//로그인
-	Map<String, Object> login(User user);
+	Map<String, Object> login(String user_id, String password);
 
 	//등록
-	int registUser(User user);
+	Integer registUser(User user);
 	
 	//수정
-	int updateUser(User user);
+	Integer updateUser(User user);
 	
 	//user_id로 검색 (jwt 검증을 위해)
 	List<User> searchById(String user_id);

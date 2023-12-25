@@ -28,4 +28,7 @@ public interface DiaryDao {
 	Diary selectDiaryByDate(String diary_date);
 
 
+	String getLocationDetail(int diary_id);
+
+	String getImgUrl(int diary_id);
 }
