@@ -41,23 +41,28 @@
 	<!-- 현재 달의 총 수입 -->
 	<select id="selectBudgetIncome" parameterType="int" resultType="Budget">
 		select * from budget
-		where category
+		where category = #{category} 
+		and DATE_FORMAT(budget_date,'%Y-%m')=DATE_FORMAT(NOW(), '%Y-%m')
 	</select>
 	
 	
 	<!-- 현재 달의 총 지출 -->
 	<select id="selectBudgetExpenditure" parameterType="int" resultType="Budget">
-		select * from budget
+		SELECT * FROM budget
+    	WHERE category = #{category}
+      	AND DATE_FORMAT(budget_date, '%Y-%m') = DATE_FORMAT(NOW(), '%Y-%m')
 	</select>
 	
 	<!-- 월 별 가계부 -->
 	<select id="selectBudgetByMonth" parameterType="String" resultType="Budget">
 		select * from budget
+		where DATE_FORMAT(budget_date, '%Y-%m') = #{budget_date}
 	</select>
 	
 	<!-- 일 별 가계부 -->
 	<select id="selectBudgetByDay" parameterType="String" resultType="Budget">
 		select * from budget
+		where DATE_FORMAT(budget_date, ;%Y-%m-%d) = #{budget_date}
 	</select>
 	  
   </mapper>
