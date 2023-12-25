@@ -31,4 +31,7 @@ public interface DiaryDao {
 	int uploadImg(Diary diary);
 
 
+	String getLocationDetail(int diary_id);
+
+	String getImgUrl(int diary_id);
 }
