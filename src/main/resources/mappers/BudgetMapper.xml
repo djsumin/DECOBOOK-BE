@@ -37,26 +37,32 @@
 		where budget_id=#{budget_id}
 	</select>
 	
+	<!-- 아래는 조건을 어떻게 달아야할지 모르겟다. -->
 	<!-- 현재 달의 총 수입 -->
-	<select id="selectBudgetIncome">
+	<select id="selectBudgetIncome" parameterType="int" resultType="Budget">
 		select * from budget
-		
+		where category = #{category} 
+		and DATE_FORMAT(budget_date,'%Y-%m')=DATE_FORMAT(NOW(), '%Y-%m')
 	</select>
 	
 	
 	<!-- 현재 달의 총 지출 -->
-	<select id="selectBudgetExpenditure">
-	
+	<select id="selectBudgetExpenditure" parameterType="int" resultType="Budget">
+		SELECT * FROM budget
+    	WHERE category = #{category}
+      	AND DATE_FORMAT(budget_date, '%Y-%m') = DATE_FORMAT(NOW(), '%Y-%m')
 	</select>
 	
 	<!-- 월 별 가계부 -->
-	<select id="selectBudgetByMonth">
-	
+	<select id="selectBudgetByMonth" parameterType="String" resultType="Budget">
+		select * from budget
+		where DATE_FORMAT(budget_date, '%Y-%m') = #{budget_date}
 	</select>
 	
 	<!-- 일 별 가계부 -->
-	<select id="selectBudgetByDay">
-	
+	<select id="selectBudgetByDay" parameterType="String" resultType="Budget">
+		select * from budget
+		where DATE_FORMAT(budget_date, ;%Y-%m-%d) = #{budget_date}
 	</select>
 	  
   </mapper>
