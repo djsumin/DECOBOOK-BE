@@ -12,7 +12,7 @@
 	
 	<!-- 회원가입 -->
 	<insert id="registUser" parameterType="User">
-		insert users (user_id, password, user_name, age, email, phone_number, gender, birthday, amount)
+		insert user (user_id, password, user_name, age, email, phone_number, gender, birthday, amount)
 		values(#{user_id}, #{password}, #{user_name}, #{age}, #{email}, #{phone_number}, #{gender}, #{birthday}, #{amount})
 	</insert>
 	

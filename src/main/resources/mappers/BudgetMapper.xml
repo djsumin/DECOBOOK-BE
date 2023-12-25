@@ -13,8 +13,8 @@
 	<!-- 가계부 수정 -->  
   	<update id="updateBudget" parameterType="Budget">
   		update budget
-  		set (isIncome=#{isIncome}, categoty=#{category}, cost=#{cost}, memo=#{memo}, after_amount=#{after_amount})
-  		where budget_id=#{budget_id}
+  		set isIncome=#{isIncome}, category=#{category}, cost=#{cost}, memo=#{memo}, after_amount=#{after_amount}
+  		where budget_id=#{budget_id} and user_id = #{user_id}
   	</update>
   
   	<!-- 가계부 삭제 -->
@@ -62,7 +62,7 @@
 	<!-- 일 별 가계부 -->
 	<select id="selectBudgetByDay" parameterType="String" resultType="Budget">
 		select * from budget
-		where DATE_FORMAT(budget_date, ;%Y-%m-%d) = #{budget_date}
+		where DATE_FORMAT(budget_date, '%Y-%m-%d') = #{budget_date}
 	</select>
 	  
   </mapper>
