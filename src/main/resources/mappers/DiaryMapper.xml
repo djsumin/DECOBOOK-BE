@@ -13,8 +13,8 @@
     <!-- 수정 -->
     <update id="updateDiary" parameterType="Diary">
         UPDATE diary
-        SET title = #{title}, diary_content = #{diary_content}, img = #{img}, orgImg = #{orgImg}
-        WHERE diary_id = #{diary_id} AND user_id = #{user_id};
+        SET title = #{title}, diary_content = #{diary_content}
+        WHERE diary_id = #{diary_id};
     </update>
 
     <!-- 게시글 삭제 -->
@@ -48,5 +48,10 @@
         WHERE diary_date = #{diary_date};
     </select>
 
-
+    <!-- 수정 -->
+    <update id="uploadImg" parameterType="Diary">
+        UPDATE diary
+        SET img = #{img}, orgImg = #{orgImg}
+        WHERE diary_id = #{diary_id};
+    </update>
 </mapper>

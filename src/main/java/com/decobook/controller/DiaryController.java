@@ -9,6 +9,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -157,14 +158,16 @@ public class DiaryController {
 		
 	}
 
-	// 파일 업로든
-	@PostMapping("/upload/{diary_id}")
+	// 파일 업로드
+	@PostMapping(value = "/upload/{diary_id}",
+			consumes = MediaType.MULTIPART_FORM_DATA_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	@Operation(summary = "파일 업로드", description = "파일 업로드 및 diary id 입력")
-	public ResponseEntity<?> uploadImg( MultipartFile file, @PathVariable int diary_id) {
-		int nResult = dService.uploadImg(file, diary_id);
-
+	public ResponseEntity<?> uploadImg(@RequestPart("file") MultipartFile file, @RequestParam int diary_id) {
+		int result = dService.uploadImg(file, diary_id);
+		System.out.println(result);
+		int fail = 0;
 		//실패
-		if(nResult == 0) {
+		if(result == fail) {
 			return new ResponseEntity<Void>(HttpStatus.UNAUTHORIZED);
 		}
 
